@@ -135,6 +135,13 @@
                     const playerNameCell = document.createElement("td");
                     playerNameCell.textContent = entry.playerName;
                     playerNameCell.classList.add("player");
+                    
+                    // Добавляем обработчик события клика к ячейке с именем игрока
+                    playerNameCell.addEventListener("click", () => {
+                        const playerName = entry.playerName;
+                        window.location.href = `banned/${encodeURIComponent(playerName)}.html`;
+                    });
+
                     row.appendChild(playerNameCell);
 
                     const banReasonCell = document.createElement("td");
@@ -148,11 +155,6 @@
                     const discordCell = document.createElement("td");
                     discordCell.textContent = entry.discord;
                     row.appendChild(discordCell);
-
-                    row.addEventListener("click", () => {
-                        const playerName = entry.playerName;
-                        window.location.href = `banned/${encodeURIComponent(playerName)}.html`;
-                    });
 
                     tableBody.appendChild(row);
                 });
