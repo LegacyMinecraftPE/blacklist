@@ -123,7 +123,6 @@
             <!-- List  -->
         </tbody>
     </table>
-
     <script>
         fetch("banned.json")
             .then(response => response.json())
@@ -149,6 +148,11 @@
                     const discordCell = document.createElement("td");
                     discordCell.textContent = entry.discord;
                     row.appendChild(discordCell);
+
+                    row.addEventListener("click", () => {
+                        const playerName = entry.playerName;
+                        window.location.href = `banned/${encodeURIComponent(playerName)}.html`;
+                    });
 
                     tableBody.appendChild(row);
                 });
@@ -189,5 +193,4 @@
             });
     </script>
 </body>
-
 </html>
