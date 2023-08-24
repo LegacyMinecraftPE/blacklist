@@ -113,7 +113,7 @@ button[type="submit"]:hover {
                 const yourDiscord = document.getElementById("your_discord").value;
 
 				const webhookToken = "${{ secrets.WEBHOOKTOKEN }}";
-                const webhookUrl = `https://discordapp.com/api/webhooks/${WEBHOOKTOKEN}`;
+                const webhookUrl = `https://discordapp.com/api/webhooks/${webhookToken}`;
 
                 const embedData = {
                     title: "New Ban Request:",
