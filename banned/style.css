@@ -1,0 +1,58 @@
+body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0e0e0e;
+            color: #fff;
+            margin: 0px;
+            padding: 16px;
+        }
+
+        h1,h2,h4,h5,p {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        mark {
+            background-color: #333333;
+            color: #fff;
+            padding: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 100%;
+            table-layout: fixed;
+            margin: 20px auto;
+            border-spacing: 0px;
+        }
+
+        th {
+            background-color: #111111;
+            color: #fff;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #292a2b;
+            text-align: center;
+            padding: 10px;
+        }
+
+        td.player {
+            color: red;
+            background-color: #0e0e0e;
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
