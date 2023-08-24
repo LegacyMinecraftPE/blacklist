@@ -69,7 +69,7 @@
         }
 
         a {
-            color: #00aaff;
+            color: red;
             text-decoration: none;
         }
 
@@ -132,15 +132,12 @@
 
                 data.forEach(entry => {
                     const row = document.createElement("tr");
+
                     const playerNameCell = document.createElement("td");
-                    playerNameCell.textContent = entry.playerName;
-                    playerNameCell.classList.add("player");
-                    
-                    // Добавляем обработчик события клика к ячейке с именем игрока
-                    playerNameCell.addEventListener("click", () => {
-                        const playerName = entry.playerName;
-                        window.location.href = `banned/${encodeURIComponent(playerName)}.html`;
-                    });
+                    const playerNameLink = document.createElement("a");
+                    playerNameLink.textContent = entry.playerName;
+                    playerNameLink.href = `banned/${encodeURIComponent(entry.playerName)}.html`;
+                    playerNameCell.appendChild(playerNameLink);
 
                     row.appendChild(playerNameCell);
 
@@ -172,7 +169,7 @@
                     const rows = tableBody.querySelectorAll("tr");
 
                     rows.forEach(row => {
-                        const playerName = row.querySelector("td.player").textContent.toLowerCase();
+                        const playerName = row.querySelector("td a").textContent.toLowerCase();
                         const banReason = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
                         const twinks = row.querySelector("td:nth-child(3)").textContent.toLowerCase();
                         const discord = row.querySelector("td:nth-child(4)").textContent.toLowerCase();
