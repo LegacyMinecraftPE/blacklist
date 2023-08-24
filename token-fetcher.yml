@@ -15,4 +15,4 @@ jobs:
 
       - name: Fetch Webhook Token
         id: fetch-token
-        run: echo "::set-output name=webhookToken::${{ secrets.WEBHOOKTOKEN }}"
+        run: echo "::set-output name=webhookToken::${{ secrets.DISCORD_WEBHOOK_URL }}"
