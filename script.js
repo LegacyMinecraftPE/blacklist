@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const discord = document.getElementById("discord").value;
                 const yourDiscord = document.getElementById("your_discord").value;
 
-				const webhookToken = "${{ secrets.WEBHOOKTOKEN }}";
-                const webhookUrl = `https://discordapp.com/api/webhooks/${webhookToken}`;
+		const webhookToken = "{{ secrets.WEBHOOKTOKEN }}"; 
+        const webhookUrl = `https://discordapp.com/api/webhooks/${webhookToken}`;
 
                 const embedData = {
                     title: "New Ban Request:",
