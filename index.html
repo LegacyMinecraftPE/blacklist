@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script> document.oncontextmenu = cmenu; function cmenu() { return false; } </script>
+    <title>Old MinecraftPE Bans</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Open+Sans:wght@400;500;700&family=REM&family=Titillium+Web:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0e0e0e;
+            color: #fff;
+            margin: 0px;
+            padding-left: 8px;
+			padding-right: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        mark {
+            background-color: #333333;
+            color: #fff;
+            padding: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 100%;
+            table-layout: fixed;
+            margin: 20px auto;
+            border-spacing: 0px;
+        }
+
+        th {
+            background-color: #111111;
+            color: #fff;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #292a2b;
+            text-align: center;
+            padding: 10px;
+        }
+
+        td.player {
+            color: red;
+            background-color: #0e0e0e;
+        }
+
+        p#playerCount {
+            text-align: center;
+            padding: 10px;
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search menu */
+        #search {
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        #searchInput {
+            padding: 5px;
+            width: 60%;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        #searchButton {
+            padding: 5px 10px;
+            background-color: #111111;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>List of bad Old Minecraft PE players</h1>
+    <h3>Players from this list are not recommended to be allowed on the servers. <a href="add_ban.html">You can add a player to the list</a>.</h3>
+
+    <hr>
+    <p id="playerCount">0 players on list</p>
+
+    <div id="search">
+    <input type="text" id="searchInput" placeholder="Search...">
+</div>
+
+    <table id="blacklistTable">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Reason</th>
+                <th>Twinks</th>
+                <th>Discord</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- List  -->
+        </tbody>
+    </table>
+
+    <script>
+        fetch("banned.json")
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector("#blacklistTable tbody");
+                const playerCountElement = document.getElementById("playerCount");
+
+                data.forEach(entry => {
+                    const row = document.createElement("tr");
+                    const playerNameCell = document.createElement("td");
+                    playerNameCell.textContent = entry.playerName;
+                    playerNameCell.classList.add("player");
+                    row.appendChild(playerNameCell);
+
+                    const banReasonCell = document.createElement("td");
+                    banReasonCell.textContent = entry.banReason;
+                    row.appendChild(banReasonCell);
+
+                    const twinksCell = document.createElement("td");
+                    twinksCell.textContent = entry.twinks;
+                    row.appendChild(twinksCell);
+
+                    const discordCell = document.createElement("td");
+                    discordCell.textContent = entry.discord;
+                    row.appendChild(discordCell);
+
+                    tableBody.appendChild(row);
+                });
+
+                // Update player count
+                playerCountElement.textContent = `${data.length} players on list`;
+
+                const searchInput = document.getElementById("searchInput");
+
+                searchInput.addEventListener("input", () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    filterTableBySearchTerm(searchTerm);
+                });
+
+                function filterTableBySearchTerm(term) {
+                    const rows = tableBody.querySelectorAll("tr");
+
+                    rows.forEach(row => {
+                        const playerName = row.querySelector("td.player").textContent.toLowerCase();
+                        const banReason = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+                        const twinks = row.querySelector("td:nth-child(3)").textContent.toLowerCase();
+                        const discord = row.querySelector("td:nth-child(4)").textContent.toLowerCase();
+
+                        if (
+                            playerName.includes(term) ||
+                            banReason.includes(term) ||
+                            twinks.includes(term) ||
+                            discord.includes(term)
+                        ) {
+                            row.style.display = "";
+                        } else {
+                            row.style.display = "none";
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error loading data:", error);
+            });
+    </script>
+</body>
+
+</html>
