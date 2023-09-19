@@ -166,5 +166,11 @@
         "banReason": "Griefing",
         "twinks": "",
         "discord": ""
+    },
+    {
+        "playerName": "hater",
+        "banReason": "Пошел против режима",
+        "twinks": "",
+        "discord": ""
     }
 ]
