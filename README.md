@@ -4,4 +4,4 @@ This site is dedicated to researching and documenting bad players in older versi
 
 ## How to add a player to the list
 
-You can offer to add a player to the list, write to Discord @eqozqq.
+You can offer to add a player to the list, write to Discord `@eqozqq`.
