@@ -24,12 +24,6 @@
             padding: 3px;
         }
 
-        table {
-            border-collapse: collapse;
-            text-align: center;
-            margin-top: 20px;
-        }
-
         th {
             background-color: #111111;
             color: #fff;
@@ -75,6 +69,10 @@
             border: none;
             cursor: pointer;
         }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
     </style>
 </head>
 
@@ -90,18 +88,20 @@
             <input type="text" id="searchInput" class="form-control" placeholder="Search...">
         </div>
 
-        <table id="blacklistTable" class="table table-dark table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Reason</th>
-                    <th>Twinks</th>
-                    <th>Discord</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table id="blacklistTable" class="table table-dark table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Reason</th>
+                        <th>Twinks</th>
+                        <th>Discord</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
         <footer class="text-center mt-4">
             <p>&copy; 2023 Legacy Minecraft PE. We are not affiliated with Mojang. All brands and trademarks belong to their respective owners.</p>
