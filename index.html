@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,88 +7,43 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #0e0e0e;
-            color: #fff;
+        .danger-circle {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
         }
-
-        h1, h3 {
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        mark {
-            background-color: #333333;
-            color: #fff;
-            padding: 3px;
-        }
-
-        th {
-            background-color: #111111;
-            color: #fff;
-        }
-
-        th, td {
-            border: 1px solid #292a2b;
-        }
-
-        td.player {
-            color: red;
-            background-color: #0e0e0e;
-        }
-
-        p#playerCount {
-            text-align: center;
-            padding: 10px;
-        }
-
-        a {
-            color: red;
+        .danger-circle.high { background-color: #dc3545; }
+        .danger-circle.medium { background-color: #ffc107; }
+        .danger-circle.low { background-color: #0dcaf0; }
+        abbr[title] {
             text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        #search {
-            text-align: center;
-            margin: 10px auto;
-        }
-
-        #searchInput {
-            background-color: #111111;
-            border: 1px solid #292a2b;
-            color: #fff;
-        }
-
-        #searchButton {
-            background-color: #111111;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
+            cursor: help;
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>List of bad Old Minecraft PE players</h1>
-        <h3>Players from this list are not recommended to be allowed on the servers. You can offer to add a player to the list, write to Discord <mark>@eqozqq</mark>.</h3>
-
+        <h1 class="text-center mt-4">List of bad Old Minecraft PE players</h1>
+        <h3 class="text-center mt-2">Players on this list are not recommended to be allowed on the servers. <a href="adding.html">You want to add a player?</a></h3>
         <hr>
-        <p id="playerCount">0 players on list</p>
+        <p id="playerCount" class="text-center">0 players on list</p>
 
-        <div id="search" class="mb-3">
-            <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+        <div class="mb-3">
+            <h5>Danger level:</h5>
+            <span class="danger-circle high"></span> High
+            <span class="danger-circle medium ms-3"></span> Medium
+            <span class="danger-circle low ms-3"></span> Low
         </div>
 
-        <div class="table-wrapper">
-            <table id="blacklistTable" class="table table-dark table-bordered table-striped">
+        <div class="alert alert-primary" role="alert">Try a <a href="https://www.nostalgiaforum.xyz/index.php?resources/144/" target="_blank">plugin</a> for NostalgiaCore, which will automatically perform the specified actions if a player from this list logs into the server.</div>
+
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+        </div>
+        <div class="table-responsive">
+            <table id="blacklistTable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Player</th>
@@ -102,9 +56,8 @@
                 </tbody>
             </table>
         </div>
-
         <footer class="text-center mt-4">
-            <p>&copy; 2023 Legacy Minecraft PE. We are not affiliated with Mojang. All brands and trademarks belong to their respective owners.</p>
+            <p>&copy; 2024 Legacy Minecraft PE. We are not affiliated with Mojang. All brands and trademarks belong to their respective owners.</p>
         </footer>
     </div>
 
@@ -120,10 +73,24 @@
                     const row = document.createElement("tr");
 
                     const playerNameCell = document.createElement("td");
+                    
+                    const dangerCircle = document.createElement("span");
+                    dangerCircle.classList.add("danger-circle", entry.dangerLevel);
+                    playerNameCell.appendChild(dangerCircle);
+
                     const playerNameLink = document.createElement("a");
                     playerNameLink.textContent = entry.playerName;
                     playerNameLink.href = `banned/${encodeURIComponent(entry.playerName)}.html`;
+                    playerNameLink.classList.add("text-decoration-none");
                     playerNameCell.appendChild(playerNameLink);
+
+                    if (entry.note) {
+                        const noteAbbr = document.createElement("abbr");
+                        noteAbbr.setAttribute("title", entry.note);
+                        noteAbbr.textContent = " (Note)";
+                        noteAbbr.classList.add("ms-1", "text-muted");
+                        playerNameCell.appendChild(noteAbbr);
+                    }
 
                     row.appendChild(playerNameCell);
 
@@ -166,9 +133,9 @@
                             twinks.includes(term) ||
                             discord.includes(term)
                         ) {
-                            row.style.display = "";
+                            row.classList.remove("d-none");
                         } else {
-                            row.style.display = "none";
+                            row.classList.add("d-none");
                         }
                     });
                 }

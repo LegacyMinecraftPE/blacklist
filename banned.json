@@ -3,174 +3,232 @@
         "playerName": "Sheva",
         "banReason": "Griefing, inappropriate behavior",
         "twinks": "Sheva, Semget, Fendisa, Ukulaku, shadrporn",
-        "discord": "1103677320134393936, 799338709655879722, 996105496727654480, 1064354937783468132, 1023379750959460465, 965717758941732875"
+        "discord": "1103677320134393936, 799338709655879722, 996105496727654480, 1064354937783468132, 1023379750959460465, 965717758941732875",
+        "dangerLevel": "high",
+        "note": ""
     },
     {
         "playerName": "Ltin24",
         "banReason": "Inappropriate behavior",
-        "twinks": "Ltin24",
-        "discord": "977266723860394014, 1088907025657888829"
+        "twinks": "",
+        "discord": "977266723860394014, 1088907025657888829",
+        "dangerLevel": "low",
+        "note": ""
     },
     {
         "playerName": "Gemerel",
         "banReason": "Griefing, inappropriate behavior",
         "twinks": "Doppio, hohol19",
-        "discord": "1120320272189358200"
+        "discord": "1120320272189358200",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "nelya1975",
         "banReason": "Inappropriate behavior",
         "twinks": "drani, og",
-        "discord": "743786734461911122, 907590119278669864"
+        "discord": "743786734461911122, 907590119278669864",
+        "dangerLevel": "high",
+        "note": ""
     },
     {
         "playerName": "Zenith",
         "banReason": "Griefing, inappropriate behavior",
-        "twinks": "ZenithOwO, itzazenith, _1old",
-        "discord": "1133688785847205970, 1017754986249191475, 518376913568268288"
+        "twinks": "ZenithOwO, itzazenith, _1old, andrewnyan",
+        "discord": "1133688785847205970, 1017754986249191475, 518376913568268288",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "HukBross",
         "banReason": "Inappropriate behavior, possible griefing",
         "twinks": "Bwor, Donw, Seker, vytor",
-        "discord": "1075145353143263342, 1074823196697694208"
+        "discord": "1075145353143263342, 1074823196697694208",
+        "dangerLevel": "low",
+        "note": "No threat at this time"
     },
     {
         "playerName": "sample_text",
         "banReason": "Griefing, inappropriate behavior",
         "twinks": "",
-        "discord": "469416562877530123"
+        "discord": "469416562877530123",
+        "dangerLevel": "high",
+        "note": ""
     },
     {
         "playerName": "meg123",
         "banReason": "Griefing",
         "twinks": "Vadim2010_fgl",
-        "discord": "1078741578631348305"
+        "discord": "1078741578631348305",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "grindminer35",
         "banReason": "Suspicious person",
         "twinks": "",
-        "discord": "1129377028156702780"
+        "discord": "1129377028156702780",
+        "dangerLevel": "low",
+        "note": ""
     },
     {
         "playerName": "geniiks",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": "857199122506579968"
+        "discord": "857199122506579968",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "Black0p5",
         "banReason": "Griefing",
         "twinks": "stevi",
-        "discord": "941067926776201328"
+        "discord": "941067926776201328",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "YBer___",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "MANSO100",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "iter__",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "Scorpion",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "stevepok",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": "1064934269119639552"
+        "discord": "1064934269119639552",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "cocka23",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "NEOGAN",
         "banReason": "Griefing, Inappropriate behavior, Suspicious person",
         "twinks": "AMRIUSIK",
-        "discord": "673498609563598848, 1029674086089105458"
+        "discord": "673498609563598848, 1029674086089105458",
+        "dangerLevel": "high",
+        "note": ""
     },
     {
         "playerName": "kuromen",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "H",
         "banReason": "Trolling and being annoying, stealing some items and griefing before",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "StevePi",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "Darkbox",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "Alter47",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "emilianoo",
         "banReason": "Griefing",
         "twinks": "hugoo",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "richi",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": "871612618480160799"
+        "discord": "871612618480160799",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "ohmagad",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "rokor",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "scissors",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     },
     {
         "playerName": "SteveNeLox",
         "banReason": "Griefing",
         "twinks": "",
-        "discord": ""
+        "discord": "",
+        "dangerLevel": "medium",
+        "note": ""
     }
 ]
